@@ -1,7 +1,5 @@
 {
     "env": {
-        "browser": true,
-        "jasmine": true,
         "jest": true,
         "node": true
     },
@@ -14,9 +12,11 @@
         "void": true
     },
     "plugins": [
+        "jest",
         "jsdoc",
         "module-resolver",
-        "prettier"
+        "prettier",
+        "unicorn"
     ],
     "root": true,
     "rules": {
@@ -26,7 +26,56 @@
             "error",
             "always"
         ],
+        "import/default": "error",
+        "import/first": "error",
+        "import/named": "error",
+        "import/newline-after-import": "error",
+        "import/no-absolute-path": "error",
+        "import/no-cycle": "error",
+        "import/no-deprecated": "warn",
+        "import/no-dynamic-require": "error",
+        "import/no-duplicates": "error",
+        "import/no-mutable-exports": "error",
+        "import/no-named-as-default": "error",
+        "import/no-named-as-default-member": "error",
+        "import/no-namespace": "error",
+        "import/no-restricted-paths": "error",
+        "import/no-self-import": "error",
+        "import/no-unresolved": "error",
+        "import/no-useless-path-segments": "error",
+        "import/order": [
+            "error",
+            {
+                "groups": [
+                    "external",
+                    "builtin",
+                    "internal",
+                    "parent",
+                    "sibling",
+                    "index"
+                ],
+                "newlines-between": "always"
+            }
+        ],
         "import/prefer-default-export": "off",
+        "jest/lowercase-name": [
+            "error",
+            {
+                "ignore": [
+                    "describe"
+                ]
+            }
+        ],
+        "jest/no-alias-methods": "error",
+        "jest/no-focused-tests": "error",
+        "jest/no-identical-title": "error",
+        "jest/no-jasmine-globals": "error",
+        "jest/no-jest-import": "error",
+        "jest/no-test-callback": "error",
+        "jest/no-test-return-statement": "error",
+        "jest/prefer-to-be-null": "error",
+        "jest/prefer-to-be-undefined": "error",
+        "jest/prefer-to-have-length": "error",
         "jsdoc/check-param-names": "error",
         "jsdoc/check-tag-names": "error",
         "jsdoc/check-types": "error",
@@ -124,7 +173,37 @@
                     "FunctionExpression": false
                 }
             }
-        ]
+        ],
+        "unicorn/catch-error-name": [
+            "error",
+            {
+                "name": "error"
+            }
+        ],
+        "unicorn/custom-error-definition": "error",
+        "unicorn/error-message": "error",
+        "unicorn/escape-case": "error",
+        "unicorn/explicit-length-check": "error",
+        "unicorn/filename-case": [
+            "error",
+            {
+                "case": "camelCase"
+            }
+        ],
+        "unicorn/import-index": "error",
+        "unicorn/new-for-builtins": "error",
+        "unicorn/no-abusive-eslint-disable": "error",
+        "unicorn/no-array-instanceof": "error",
+        "unicorn/no-hex-escape": "error",
+        "unicorn/no-new-buffer": "error",
+        "unicorn/no-unsafe-regex": "error",
+        "unicorn/number-literal-case": "error",
+        "unicorn/prefer-exponentiation-operator": "error",
+        "unicorn/prefer-spread": "error",
+        "unicorn/prefer-starts-ends-with": "error",
+        "unicorn/prefer-type-error": "error",
+        "unicorn/regex-shorthand": "error",
+        "unicorn/throw-new-error": "error"
     },
     "settings": {
         "import/resolver": {
